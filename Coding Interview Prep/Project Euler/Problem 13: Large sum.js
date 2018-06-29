@@ -2,27 +2,37 @@
 // Problem Description:
 // https://learn.freecodecamp.org/coding-interview-prep/project-euler/problem-13-large-sum
 
-function largeSum(arr) {
-  var d = 50;
-  var dMax = 60;
-  var result = new Array(dMax).fill(0);
+const largeSum = arr => {
+  const d = 50;
+  const dMax = 60;
+  let result = new Array(dMax).fill(0);
 
-  arr = arr.map(num => num.split('').map(str => parseInt(str)).reverse());
+  arr = arr.map(num =>
+    num
+      .split('')
+      .map(str => parseInt(str))
+      .reverse()
+  );
 
-  for(let i = 0, sum = 0, over = 0; i < dMax; i++) {
-    if(i < d) {
+  for (let i = 0, sum = 0, over = 0; i < dMax; i++) {
+    if (i < d) {
       sum = arr.map(a => a[i]).reduce((a, b) => a + b) + over;
-    }
-    else {
+    } else {
       sum = over;
     }
 
     over = Math.floor(sum / 10);
-    result[i] = (sum % 10) ? sum % 10 : 0;
+    result[i] = sum % 10 ? sum % 10 : 0;
   }
 
-  return parseInt(result.reverse().join('').replace(/^0+(\d+)$/, '$1').substring(0, 10));
-}
+  return parseInt(
+    result
+      .reverse()
+      .join('')
+      .replace(/^0+(\d+)$/, '$1')
+      .substring(0, 10)
+  );
+};
 
 // only change code above this line
 
