@@ -18,23 +18,16 @@ app.get('/', function(req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-// Timestamp API endpoint
-app.get('/api/timestamp/:date_string?', function(req, res) {
-  try {
-    var date_string = req.params.date_string;
+// To make sure we get the real IP
+app.enable('trust proxy');
 
-    if (/^\d{4}-\d{2}-\d{2}$/g.test(date_string)) {
-      var date = new Date(date_string);
-    } else if (date_string) {
-      var date = new Date(parseInt(date_string));
-    } else {
-      var date = new Date();
-    }
-
-    res.json({ unix: date.getTime(), utc: date.toUTCString() });
-  } catch (e) {
-    res.json({ error: e });
-  }
+// Request Header Parser Microservice
+app.get('/api/whoami', function(req, res) {
+  res.json({
+    ipaddress: req.ip,
+    language: req.get('Accept-Language'),
+    software: req.get('User-Agent')
+  });
 });
 
 // listen for requests :)
