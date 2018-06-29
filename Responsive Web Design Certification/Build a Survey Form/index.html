@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Survey Form</title>
+</head>
+
+<body>
+  <a href='https://github.com/Kornelijus/fcc-projects/tree/master/Responsive%20Web%20Design%20Certification/Build%20a%20Survey%20Form'>
+    <div id="source">
+      Source Code
+    </div>
+  </a>
+
+  <div class="header">
+    <h1 id="title">Survey Form</h1>
+  </div>
+
+  <div class="wrapper-description mx-auto text-center">
+    <p id="description">
+      The text that you are reading is only to fill the space visually. At some point someone will replace this block of text with
+      useful words so visitors can learn more about your services/products offered by the website! Hoc damnationem consulto
+      reliquit Latine. This is just dummy text that is essentially a placeholder so you can see what your final typefaces
+      will look like.
+    </p>
+  </div>
+
+  <div class="container">
+    <form id="survey-form">
+      <div class="wrapper-name mx-auto text-center">
+        <label id="name-label" for="name">Name</label>
+        <input id="name" type="text" placeholder="Who are you?" required>
+      </div>
+
+      <div class="wrapper-email mx-auto text-center">
+        <label id="email-label" for="email">Email</label>
+        <input id="email" type="email" placeholder="What's your Email?" required>
+      </div>
+
+      <div class="wrapper-age mx-auto text-center">
+        <label id="number-label" for="number">Age</label>
+        <input id="number" type="number" min="1" max="122" placeholder="How old are you?">
+      </div>
+
+      <div class="wrapper-dropdown mx-auto text-center">
+        <label id="dropdown-label" for="dropdown">Dropdown</label>
+        <select id="dropdown">
+          <option value="" selected>Choose from these options:</option>
+          <option value="1">This one</option>
+          <option value="2">This one</option>
+          <option value="3">Or this one</option>
+        </select>
+      </div>
+
+      <div class="wrapper-comments mx-auto text-center">
+        <label id="comments-label" for="comments">Additional Comments</label>
+        <textarea id="comments" placeholder="Anything else you want to mention?"></textarea>
+      </div>
+
+      <div class="wrapper-checkboxes mx-auto text-center">
+        <label id="check1-label" class="text-left" for="check1">
+          <input id="check1" type="checkbox" value="1">
+          <span class="check1-span">Choose any</span>
+        </label>
+        <label id="check2-label" class="text-left" for="check2">
+          <input id="check2" type="checkbox" value="2">
+          <span class="check2-span">combination of</span>
+        </label>
+        <label id="check3-label" class="text-left" for="check3">
+          <input id="check3" type="checkbox" value="3">
+          <span class="check3-span">these</span>
+        </label>
+      </div>
+
+      <div class="wrapper-radio mx-auto text-center">
+        <label id="radio1-label" class="text-left" for="radio1">
+          <input id="radio1" type="radio" name="radio" value="1">
+          <span class="radio1-span">Choose one</span>
+        </label>
+        <label id="radio2-label" class="text-left" for="radio2">
+          <input id="radio2" type="radio" name="radio" value="2">
+          <span class="radio2-span">of</span>
+        </label>
+        <label id="radio3-label" class="text-left" for="radio3">
+          <input id="radio3" type="radio" name="radio" value="3">
+          <span class="radio3-span">these</span>
+        </label>
+      </div>
+
+      <div class="wrapper-button mx-auto text-center">
+        <button id="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+
+</html>
