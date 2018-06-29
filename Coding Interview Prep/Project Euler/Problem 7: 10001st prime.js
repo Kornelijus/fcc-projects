@@ -2,7 +2,7 @@
 // Problem Description:
 // https://learn.freecodecamp.org/coding-interview-prep/project-euler/problem-7-10001st-prime
 
-function nthPrime(n) {
+const nthPrime = n => {
   let found;
   for (let i = 2, count = 0; !found; i++) {
     let prime = true;
@@ -16,7 +16,7 @@ function nthPrime(n) {
     if (count === n) found = i;
   }
   return found;
-}
+};
 
 // Example:
 // > nthPrime(10001)
